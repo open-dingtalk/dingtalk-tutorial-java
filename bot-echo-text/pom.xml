@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>bot-echo-text</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>bot-echo-text</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -25,7 +25,7 @@
 		<dependency>
 			<groupId>com.dingtalk.open</groupId>
 			<artifactId>dingtalk-stream</artifactId>
-			<version>1.0.7</version>
+			<version>1.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
