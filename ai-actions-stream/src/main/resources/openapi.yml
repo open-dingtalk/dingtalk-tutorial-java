@@ -1,0 +1,58 @@
+openapi: 3.0.1
+info:
+  title: 天气查询
+  description: 按地区和日期来查看天气信息，了解气温、湿度、风向等信息。非真实天气数据，仅用于演示，请勿在生产中使用。
+  version: v1.0.0
+x-dingtalk-protocol: stream
+paths:
+  /v1/actions/example/weather/get:
+    get:
+      description: 查询特定地区的天气信息
+      summary: 查看天气
+      operationId: GetCurrentWeather
+      parameters:
+        - name: location
+          in: query
+          description: 地区
+          required: true
+          schema:
+            type: string
+        - name: date
+          in: query
+          description: 日期
+          required: true
+          schema:
+            type: string
+            x-dingtalk-entity:
+              category: time
+              format: strftime:yyyy-MM-dd
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWeatherResponse'
+components:
+  schemas:
+    GetWeatherResponse:
+      type: object
+      properties:
+        location:
+          type: string
+          description: 查询天气结果对应的城市和地区
+        date:
+          type: string
+          description: 查询天气结果对应的日期
+        text:
+          type: string
+          description: 天气现象，晴天、多云等
+        temperature:
+          type: number
+          description: 气温，单位：摄氏度
+        humidity:
+          type: number
+          description: 湿度
+        wind_direction:
+          type: string
+          description: 风向
