@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2024/3/26
  */
 @SpringBootApplication
-public class AIActionsApplication {
+public class AiActionsStreamApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AIActionsApplication.class, args);
+        SpringApplication.run(AiActionsStreamApplication.class, args);
     }
 }
